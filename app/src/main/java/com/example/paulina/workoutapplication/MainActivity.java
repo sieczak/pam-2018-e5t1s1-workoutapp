@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, listExercise.class);
+                Intent intent = new Intent(MainActivity.this, SettingPage.class);
                 startActivity(intent);
 
             }
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnExercises.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SettingPage.class);
+                Intent intent = new Intent(MainActivity.this, listExercise.class);
                 startActivity(intent);
             }
         });

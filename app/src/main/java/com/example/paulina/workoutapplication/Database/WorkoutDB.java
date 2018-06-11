@@ -10,17 +10,17 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 public class WorkoutDB extends SQLiteAssetHelper {
 
 
-    private static final String DB_Name="Workout.db";
+    private static final String DB_Name="workoutDB.db";
     private static final int DB_VER=1;
 
 
     public WorkoutDB(Context context) {
-        super(context, DB_Name, null, DB_VER);
+        super(context, DB_Name, context.getFilesDir().getPath()+"/databases",  null, DB_VER);
     }
 
     public int getSettingMode()
     {
-        SQLiteDatabase db = getReadableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
         String[] sqlSelect = {"Mode"};
