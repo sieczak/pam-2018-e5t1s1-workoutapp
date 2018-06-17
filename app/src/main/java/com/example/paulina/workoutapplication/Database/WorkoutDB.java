@@ -10,24 +10,18 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 public class WorkoutDB extends SQLiteAssetHelper {
 
 
-    private static final String DB_Name="workoutDB.db";
+    private static final String DB_Name="Workout.db";
     private static final int DB_VER=1;
 
 
     public WorkoutDB(Context context) {
-        super(context, DB_Name, context.getFilesDir().getPath()+"/databases",  null, DB_VER);
+        super(context, DB_Name, null, DB_VER);
     }
 
     public int getSettingMode()
     {
-        SQLiteDatabase db = getWritableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-
-        String[] sqlSelect = {"Mode"};
-        String sqlTable = "Setting";
-
-        qb.setTables(sqlTable);
-        Cursor c = qb.query(db,sqlSelect,null,null,null,null,null);
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * from Setting", null);
         c.moveToFirst();
         return c.getInt(c.getColumnIndex("Mode"));
 
@@ -35,7 +29,7 @@ public class WorkoutDB extends SQLiteAssetHelper {
 
     public void saveSettingMode(int value)
     {
-        SQLiteDatabase db = getReadableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         String query="UPDATE Setting SET MODE = " +value;
         db.execSQL(query);
 
