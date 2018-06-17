@@ -22,12 +22,23 @@ public class MainActivity extends AppCompatActivity {
 
         btnExercises = (Button) findViewById(R.id.btnExercises);
         btnSetting = (Button) findViewById(R.id.btnSetting);
+        btnNotes = (Button) findViewById(R.id.btnNotes);
 
         btnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, SettingPage.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btnNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, notes.class);
                 startActivity(intent);
 
             }

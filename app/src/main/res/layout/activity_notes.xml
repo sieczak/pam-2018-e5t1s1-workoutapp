@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".notes">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:gravity="center"
+        android:text="Your Notes"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/miejsce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Create note" />
+
+    <Button
+        android:id="@+id/zapisz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+
+    <TextView
+        android:id="@+id/pozapisie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+</LinearLayout>
